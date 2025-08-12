@@ -53,7 +53,7 @@ frontend/
 **Important:** Start these in order:
 1. **Config Service**
 2. **Gateway Service**
-3. Any other microservice (`posting-service`, `user-service`, `notification-service`, etc.)
+3. Any other microservice (`posting-service`, `authentication-service`, `notification-service`, etc.)
 
 💡 Each service folder contains the **SQL queries** needed to create its database schema in MySQL.
 
