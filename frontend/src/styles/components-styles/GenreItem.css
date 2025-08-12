@@ -1,0 +1,17 @@
+
+.genreItem {
+    background-color: white;
+    border: 1px solid rgb(201, 200, 200);
+    border-radius: 40px;
+    display: flex;
+    width: fit-content;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.genreItem:hover {
+    background-color: #009dff;
+    color: white;
+}
+

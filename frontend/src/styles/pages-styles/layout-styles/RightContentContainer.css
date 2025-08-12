@@ -1,0 +1,14 @@
+.rightContentContainer {
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+    border-left: 1px solid rgb(212, 212, 212);
+}
+
+/* to remove the right content container */
+@media screen and (max-width: 900px){
+    .rightContentContainer {
+        display: none;
+    }
+}

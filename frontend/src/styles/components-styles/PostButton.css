@@ -1,0 +1,24 @@
+.postButtonContainer {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.postButton { 
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-radius: 50px;
+    font-size: 20px;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    border: 0px transparent none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.postButton:hover {
+    opacity: 0.7;
+}
