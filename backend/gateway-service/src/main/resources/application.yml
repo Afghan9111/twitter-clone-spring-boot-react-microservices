@@ -1,0 +1,69 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        filter:
+          remove-non-proxy-headers:
+            headers:
+              - Proxy-Authenticate
+              - Proxy-Authorization
+              - Keep-Alive
+              - TE
+              - Trailer
+              - Transfer-Encoding
+        webflux:
+          routes:
+            - id: authentication-service
+              uri: lb://authentication-service
+              predicates:
+                - Path=/login, /register/**, /getUser
+              filters:
+                - StripPrefix=1
+
+            - id: media-service
+              uri: lb://media-service
+              predicates:
+                - Path=/media/**
+              filters:
+                - StripPrefix=1
+
+            - id: posting-service
+              uri: lb://posting-service
+              predicates:
+                - Path=/post/**, /like/**, /bookmark/**
+              filters:
+                - StripPrefix=1
+                - name: AuthenticationFilter
+
+            - id: connection-service
+              uri: lb://connection-service
+              predicates:
+                - Path=/connection/**
+              filters:
+                - StripPrefix=1
+
+            - id: notification-service-websocket
+              uri: lb:ws://notification-service
+              predicates:
+                - Path=/ws/**, /ws/info, /ws
+              filters:
+                - PreserveHostHeader
+                - StripPrefix=0
+
+            - id: notification-service-rest
+              uri: lb://notification-service
+              predicates:
+                - Path=/notifications/**
+              filters:
+                - StripPrefix=1
+                - name: AuthenticationFilter
+
+          default-filters:
+            - AuthenticationFilter
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.gateway.filter.WebsocketRoutingFilter: DEBUG
+server:
+  netty:
+    idle-timeout: 600000 # 10 minutes
