@@ -17,10 +17,13 @@ It includes multiple backend services and a frontend application.
 ```
 backend/
   posting-service/
-  user-service/
+  authentication-service/
   notification-service/
   config-service/
   gateway-service/
+  connection-service/
+  config-repo/
+  media-service/
 frontend/
 ```
 
