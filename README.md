@@ -1,5 +1,7 @@
 # Twitter Clone Backend & Frontend
 
+> **🚧 Status:** This project is currently in active development. Some features are incomplete or may change, and additional improvements are planned.
+
 This is a microservices-based Twitter clone built with **Spring Boot**, **React**, **MySQL**, **WebSockets**, **Consul** for service discovery, and other modern tools.  
 It includes multiple backend services and a frontend application.
 
