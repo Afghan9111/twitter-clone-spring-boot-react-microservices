@@ -46,7 +46,7 @@ frontend/
    http://localhost:8500
    ```
    to check your services’ health.
-
+5. Go to config-repo folder and use the command *git init* 
 ---
 
 ### 2️⃣ Start Backend Services
